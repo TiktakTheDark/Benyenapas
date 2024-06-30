@@ -1,0 +1,66 @@
+* {
+	border: 1px solid rgb(255, 0, 0);
+
+}
+
+@font-face {
+	font-family: myFirstFont;
+	src: url('Nature Beauty.ttf'),
+}
+
+@font-face {
+	font-family: mySecondFont;
+	src: url('The Bride.ttf'),
+}
+
+h1 {
+	font-family: mySecondFont;
+	font-size: 80px;
+}
+
+body {
+	margin: 0;
+	align-items: center;
+	background-color: var(--white);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: grid;
+	place-items: center;
+}
+
+
+nav {
+	position: fixed;
+	top: 0;
+	padding: 10px;
+	background-color: rgba(0, 0, 0, 0.089);
+	border-radius: 30px;
+	font-size: 40px;
+	transition: top 0.3s;
+	/* Transition effect when sliding down (and up) */
+}
+
+#navbar {
+	font-family: myFirstFont;
+}
+
+logo {
+	padding-top: 150px;
+	text-align: center;
+
+}
+
+blabla2 {
+	background-color: rgb(186, 73, 73);
+	text-align: center;
+	width: 100%;
+
+}
+
+testimonial {
+	background-color: rgb(90, 73, 186);
+	text-align: center;
+	width: 100%;
+}
