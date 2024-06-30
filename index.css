@@ -1,7 +1,4 @@
-* {
-	border: 1px solid rgb(255, 0, 0);
 
-}
 
 @font-face {
 	font-family: myFirstFont;
@@ -12,6 +9,8 @@
 	font-family: mySecondFont;
 	src: url('The Bride.ttf'),
 }
+
+html { scroll-behavior: smooth; }
 
 h1 {
 	font-family: mySecondFont;
@@ -35,15 +34,16 @@ nav {
 	position: fixed;
 	top: 0;
 	padding: 10px;
-	background-color: rgba(0, 0, 0, 0.089);
+	background-color: rgba(255, 255, 255, 0.372);
 	border-radius: 30px;
-	font-size: 40px;
+	font-size: 30px;
 	transition: top 0.3s;
 	/* Transition effect when sliding down (and up) */
 }
 
 #navbar {
 	font-family: myFirstFont;
+
 }
 
 logo {
@@ -51,6 +51,12 @@ logo {
 	text-align: center;
 
 }
+
+blabla{
+	text-align: center;
+	padding:20px;
+}
+
 
 blabla2 {
 	background-color: rgb(186, 73, 73);
