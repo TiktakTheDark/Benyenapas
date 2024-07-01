@@ -1,4 +1,9 @@
+/*
 
+* {
+	border: 1px solid red;
+}
+*/ 
 
 @font-face {
 	font-family: myFirstFont;
@@ -20,7 +25,7 @@ h1 {
 body {
 	margin: 0;
 	align-items: center;
-	background-color: var(--white);
+	background-color: rgb(176, 255, 252);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -34,10 +39,10 @@ nav {
 	position: fixed;
 	top: 0;
 	padding: 10px;
-	background-color: rgba(255, 255, 255, 0.372);
+	background-color: rgba(176, 255, 252, 0.808);
 	border-radius: 30px;
 	font-size: 30px;
-	transition: top 0.3s;
+	transition: top 2s;
 	/* Transition effect when sliding down (and up) */
 }
 
@@ -52,21 +57,89 @@ logo {
 
 }
 
-blabla{
+footer {
+	color: aliceblue;
+	background-color: rgb(0, 4, 72);
+	width: 100%;
+	align-items: center;
+}
+
+.text {
+	padding-left: 20px;
+	padding-right: 20px;
+  	align-items: center;
 	text-align: center;
-	padding:20px;
+	position:relative;
+	overflow:hidden;
 }
 
 
-blabla2 {
-	background-color: rgb(186, 73, 73);
-	text-align: center;
-	width: 100%;
-
+.fadingEffect {
+	
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background: rgb(176, 255, 252);
+    opacity: 0; /* Initialement invisible */
+    /* Supprimer animation initiale pour éviter d'overrider */
 }
 
-testimonial {
-	background-color: rgb(90, 73, 186);
-	text-align: center;
-	width: 100%;
+.fadingEffect.visible {
+    opacity: 1; /* Visible */
+    animation: showHide 3s ease-in forwards; /* Animation déclenchée */
+}
+
+.fadingEffect2 {
+	
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background: rgb(176, 255, 252);
+    opacity: 0; /* Initialement invisible */
+    /* Supprimer animation initiale pour éviter d'overrider */
+}
+
+.fadingEffect2.visible {
+    opacity: 1; /* Visible */
+    animation: fadein 3s ease-in forwards; /* Animation déclenchée */
+}
+
+@-webkit-keyframes showHide { /* Chrome, Safari */
+	0% {width:100%}
+	40% {width:70%}
+	60% {width:0%;}
+	100% {width:0%;}
+}
+@-moz-keyframes showHide { /* FF */
+	0% {width:100%}
+	40% {width:70%}
+	60% {width:0%;}
+	100% {width:0%;}
+}
+@-ms-keyframes showHide { /* IE10 */
+	0% {width:100%}
+	40% {width:70%}
+	60% {width:0%;}
+	100% {width:0%;}
+}
+@-o-keyframes showHide { /* Opera */
+	0% {width:100%}
+	40% {width:70%}
+	60% {width:0%;}
+	100% {width:0%;}
+}
+@keyframes showHide {
+	0% {width:100%}
+	40% {width:70%}
+	60% {width:0%;}
+	100% {width:0%;}
+}
+
+@keyframes fadein {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
 }
