@@ -52,7 +52,7 @@ nav {
 }
 
 logo {
-	padding-top: 150px;
+	padding-top: 100px;
 	text-align: center;
 }
 
@@ -129,7 +129,7 @@ footer {
 
 .fadingEffect3.visible {
     opacity: 1; /* Visible */
-    animation: showHide 3s ease-in forwards; /* Animation déclenchée */
+    animation: fadein 3s ease-in forwards; /* Animation déclenchée */
 }
 
 @-webkit-keyframes showHide { /* Chrome, Safari */
