@@ -1,9 +1,9 @@
 /*
-
+*/ 
 * {
 	border: 1px solid red;
 }
-*/ 
+
 
 @font-face {
 	font-family: myFirstFont;
@@ -36,6 +36,7 @@ body {
 
 
 nav {
+	z-index: 100;
 	position: fixed;
 	top: 0;
 	padding: 10px;
