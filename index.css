@@ -3,8 +3,8 @@
 * {
 	border: 1px solid red;
 }
-*/ 
 
+*/ 
 @font-face {
 	font-family: myFirstFont;
 	src: url('Nature Beauty.ttf'),
@@ -36,14 +36,16 @@ body {
 
 
 nav {
+	text-align: center;
 	z-index: 100;
 	position: fixed;
 	top: 0;
 	padding: 10px;
-	background-color: rgba(176, 255, 252, 0.808);
+	background-color: rgb(176, 255, 252);
 	border-radius: 30px;
 	font-size: 30px;
 	transition: top 2s;
+	width: 100%;
 	/* Transition effect when sliding down (and up) */
 }
 
@@ -167,4 +169,39 @@ footer {
 @keyframes fadein {
     0%   { opacity: 1; }
     100% { opacity: 0; }
+}
+
+
+
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, button {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }

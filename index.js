@@ -5,7 +5,7 @@ window.onscroll = function() {
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("navbar1").style.top = "0";
   } else {
-    document.getElementById("navbar1").style.top = "-150px";
+    document.getElementById("navbar1").style.top = "0";
   }
   prevScrollpos = currentScrollPos;
 } 
