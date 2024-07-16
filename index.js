@@ -26,9 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
               if (fadingEffectElement) {
                   fadingEffectElement.classList.add('visible');
                   observer.unobserve(entry.target); // Arrête d'observer après l'animation
-              } else {
-                  console.log('No .fadingEffect element found');
-              }
+              } 
           }
       });
   });
@@ -49,9 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
               if (fadingEffectElement) {
                   fadingEffectElement.classList.add('visible');
                   observer.unobserve(entry.target); // Arrête d'observer après l'animation
-              } else {
-                  console.log('No .fadingEffect element found');
-              }
+              } 
           }
       });
   });
@@ -72,9 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (fadingEffectElement) {
                     fadingEffectElement.classList.add('visible');
                     observer.unobserve(entry.target); // Arrête d'observer après l'animation
-                } else {
-                    console.log('No .fadingEffect element found');
-                }
+                } 
             }
         });
     });

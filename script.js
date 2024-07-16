@@ -1,8 +1,13 @@
-// Fonction pour générer les options de temps
+document.addEventListener('DOMContentLoaded', function() {
+    // Générer les options de temps par intervalle de 30 minutes
+    generateTimeOptions();
+});
+
+// Fonction pour générer les options de temps par intervalle de 30 minutes
 function generateTimeOptions() {
     const timeSelect = document.getElementById('time');
-    const start = 0; // minuit
-    const end = 24 * 60; // 24 heures en minutes
+    const start = 480; // 8:00 (en minutes depuis minuit)
+    const end = 20 * 60; // 20:00 (en minutes depuis minuit)
 
     for (let i = start; i < end; i += 30) {
         const hours = Math.floor(i / 60).toString().padStart(2, '0');
@@ -14,34 +19,34 @@ function generateTimeOptions() {
     }
 }
 
-// Appeler la fonction pour générer les options de temps
-generateTimeOptions();
-
 document.getElementById('appointment-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
+    event.preventDefault(); // Empêche l'envoi du formulaire par défaut
+
+    // Récupérer les valeurs des champs
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var date = document.getElementById('date').value;
     var time = document.getElementById('time').value;
 
-    var appointment = {
-        'summary': 'Rendez-vous avec ' + name,
-        'description': 'Email: ' + email,
-        'start': {
-            'dateTime': date + 'T' + time + ':00',
-            'timeZone': 'Europe/Paris'
-        },
-        'end': {
-            'dateTime': date + 'T' + (parseInt(time.split(':')[0]) + 1) + ':' + time.split(':')[1] + ':00',
-            'timeZone': 'Europe/Paris'
-        }
-    };
+    // Adresse email destinataire fixe
+    var recipientEmail = 'stephanediaz47@gmail.com';
 
-    addEventToGoogleCalendar(appointment);
+    // Convertir la date et l'heure en objet Date
+    var selectedDate = new Date(date);
+    var selectedTime = time.split(':');
+    selectedDate.setHours(selectedTime[0]);
+    selectedDate.setMinutes(selectedTime[1]);
+
+    // Construire la date et l'heure au format ISO 8601 en UTC
+    var isoDateTime = selectedDate.toISOString().slice(0, 19).replace(/[-:]/g, '') + 'Z';
+
+    // Construction de l'URL pour créer un événement dans Google Agenda
+    var googleCalendarUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+        '&text=' + encodeURIComponent('Rendez-vous avec ' + name) +
+        '&dates=' + encodeURIComponent(isoDateTime + '/' + isoDateTime) +
+        '&details=' + encodeURIComponent('Rendez-vous avec ' + name + ' à ' + time) +
+        '&add=' + encodeURIComponent(recipientEmail);
+
+    // Rediriger l'utilisateur vers Google Agenda
+    window.open(googleCalendarUrl, '_blank');
 });
-
-function addEventToGoogleCalendar(event) {
-    // Code pour ajouter l'événement au calendrier Google
-    // Utiliser l'API Google Calendar ici
-}
